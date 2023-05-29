@@ -24,9 +24,20 @@ fn read_as_string() {
             }
         }
     }
+    // println!("{:?}", all_sum);
+
     // Write out result to .txt file for debugging
     file.write_all(format!("{:?}", all_sum.iter().max().unwrap()).as_bytes())
         .expect("Unable to write data");
+
+    // sort all_sum
+    all_sum.sort();
+
+    all_sum.reverse();
+
+    println!("{:?}", all_sum[0..3].to_vec().iter().sum::<i32>());
+
+    // write out top 3 highest values
 }
 
 fn main() {
